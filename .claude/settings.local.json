@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(chmod +x /Users/hiroshi/code/space-indicator/build.sh)",
+      "Bash(swift build *)"
+    ]
+  }
+}
