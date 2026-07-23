@@ -40,6 +40,7 @@ private func setScrollLinear(_ linear: Bool) {
 class AppDelegate: NSObject, NSApplicationDelegate {
     var statusItem: NSStatusItem!
     var linearScrollItem: NSMenuItem!
+    var claudeStatusItem: ClaudeStatusItemManager!
 
     func applicationDidFinishLaunching(_: Notification) {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -66,6 +67,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         applyScrollSetting()
         refresh()
+
+        claudeStatusItem = ClaudeStatusItemManager()
+        claudeStatusItem.setup()
     }
 
     private func applyScrollSetting() {

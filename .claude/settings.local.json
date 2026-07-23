@@ -2,7 +2,18 @@
   "permissions": {
     "allow": [
       "Bash(chmod +x /Users/hiroshi/code/space-indicator/build.sh)",
-      "Bash(swift build *)"
+      "Bash(swift build *)",
+      "Bash(python3 -c \"import sys,json; [print\\(json.dumps\\(json.loads\\(l\\), indent=2\\)\\) for l in sys.stdin]\")",
+      "Bash(xargs -I{} sh -c 'grep \"usage\" {} | head -3')",
+      "Bash(./build.sh *)",
+      "Bash(python3 -m json.tool)",
+      "Bash(security find-generic-password *)",
+      "Bash(security find-internet-password *)",
+      "Bash(pkill -f \"SpaceIndicator.app/Contents/MacOS/SpaceIndicator\")",
+      "Bash(open /Users/hiroshi/code/space-indicator/SpaceIndicator.app)",
+      "Bash(codesign -d --entitlements - SpaceIndicator.app)",
+      "Read(//Users/hiroshi/.claude/**)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d.get\\('oauthAccount'\\) or d.get\\('account'\\) or d.get\\('email'\\) or 'not found'\\)\")"
     ]
   }
 }
