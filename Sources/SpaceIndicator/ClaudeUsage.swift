@@ -196,7 +196,7 @@ class ClaudeUsageParser {
         let monthEnd = jstCalendar.date(byAdding: DateComponents(month: 1, day: -1), to: monthStart)!
         let weekdaysInMonth = max(1, countWeekdays(from: monthStart, through: monthEnd))
         let weekdaysLeft = max(1, countWeekdays(from: now, through: monthEnd))
-        let allowanceLeft = 250.0 * (Double(weekdaysLeft) / Double(weekdaysInMonth))
+        let allowanceLeft = 350.0 * (Double(weekdaysLeft) / Double(weekdaysInMonth))
         let dailyBudget = allowanceLeft / Double(weekdaysLeft)
         let percent = Int((spend / dailyBudget * 100).rounded())
         let windowStart = jstUsageDayWindow().start
